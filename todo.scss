@@ -1,0 +1,36 @@
+@import url('/node_modules/bootswatch/dist/darkly/bootstrap.min.css');
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:teal;
+}
+
+// UL
+.list-group{
+    list-style-type: none;
+
+    .list-group-item:hover{
+        background: rgb(55, 90, 127);
+    }
+    .list-group-item{
+            width: 100%;
+            float:left;
+            a{
+                float: right;
+            }
+    }
+    
+}
+
+
+@media (max-width: 575.98px) {
+    .container .form-group .row .submit{
+        margin-top: 15px;
+    }    
+}

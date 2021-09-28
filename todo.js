@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
             `<li class="list-group-item" id='${id}'>
             <span>${des}</span>
-            <a href="javascript:void(0)" class="close btn btn-danger">&times</a>
+            <a href="javascript:void(0)" class="close btn btn-danger" id="close">&times</a>
             </li>
             
             `
@@ -71,14 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     //DELETING TODO ITEMS
-    list.addEventListener(`click`, (e) => {
-        let TodoList = e.target.parentElement
-    
-        if(confirm(`Want to delete this task?`) == true ){
-            TodoList.remove()
-        }
-    
+    document.querySelector(`.li-container`).addEventListener(`click`, (e) => {
+        let user_del = e.target.id == "close"
+            
+            if(user_del){
+                    if(confirm(`Want to delete this task?`) == true ){
+                        e.target.parentElement.remove()
+                    }
+            }
     })
+
+
     
     //CLEAR ALL TODO ITEMS
     clear.addEventListener(`click`, () => {
